@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reserva de Salas</title>
+  <meta name="theme-color" content="#1d3b53">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" href="./icons/icon-192.png">
+  <link rel="apple-touch-icon" href="./icons/icon-192.png">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Reserva de Salas</h1>
+    <nav>
+      <button data-t="agenda" class="on">Agenda</button>
+      <button data-t="espacos">Espaços</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Aba Agenda -->
+    <section id="agenda">
+      <div class="bar">
+        <button id="prev" aria-label="Dia anterior">‹</button>
+        <input type="date" id="data" aria-label="Data">
+        <button id="next" aria-label="Próximo dia">›</button>
+        <select id="modo" aria-label="Modo de exibição">
+          <option value="dia">Dia</option>
+          <option value="semana">Semana</option>
+        </select>
+      </div>
+      <div class="bar">
+        <select id="fEsp" aria-label="Filtrar por espaço"></select>
+        <input id="fProf" placeholder="Filtrar por professor" aria-label="Filtrar por professor">
+      </div>
+      <div id="lista"></div>
+    </section>
+
+    <!-- Aba Espaços -->
+    <section id="espacos" hidden>
+      <button id="novoEsp" class="pri">Novo espaço</button>
+      <div id="listaEsp"></div>
+    </section>
+  </main>
+
+  <button id="fab" class="pri">Nova reserva</button>
+
+  <!-- Janela: reserva -->
+  <dialog id="dRes">
+    <form id="fRes">
+      <h2 id="tRes">Nova reserva</h2>
+
+      <label>Espaço
+        <select id="rEsp" required></select>
+      </label>
+
+      <label>Data
+        <input type="date" id="rData" required>
+      </label>
+
+      <div class="duo">
+        <label>Início
+          <input type="time" id="rIni" required>
+        </label>
+        <label>Fim
+          <input type="time" id="rFim" required>
+        </label>
+      </div>
+
+      <label>Responsável
+        <input id="rResp" required>
+      </label>
+
+      <label>Turma
+        <input id="rTurma" required>
+      </label>
+
+      <label>Finalidade
+        <input id="rFin">
+      </label>
+
+      <p class="erro" id="rErro" role="alert"></p>
+
+      <div class="acts">
+        <button type="button" id="rDel" class="del" hidden>Cancelar reserva</button>
+        <button type="button" class="fechar">Fechar</button>
+        <button class="pri">Salvar reserva</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Janela: espaço -->
+  <dialog id="dEsp">
+    <form id="fEspForm">
+      <h2 id="tEsp">Novo espaço</h2>
+
+      <label>Nome
+        <input id="eNome" required>
+      </label>
+
+      <label>Tipo
+        <select id="eTipo">
+          <option>Laboratório</option>
+          <option>Sala de aula</option>
+          <option>Auditório</option>
+          <option>Biblioteca</option>
+          <option>Outro</option>
+        </select>
+      </label>
+
+      <label>Capacidade
+        <input type="number" id="eCap" min="1" required>
+      </label>
+
+      <label>Recursos (separe por vírgula)
+        <input id="eRec">
+      </label>
+
+      <div class="acts">
+        <button type="button" id="eDel" class="del" hidden>Excluir espaço</button>
+        <button type="button" class="fechar">Fechar</button>
+        <button class="pri">Salvar espaço</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="./app.js"></script>
+</body>
+
+</html>

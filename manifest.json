@@ -1,0 +1,25 @@
+{
+  "name": "Reserva de Salas e Laboratórios",
+  "short_name": "Reserva Salas",
+  "description": "Reserva de salas e laboratórios do colégio, sem conflitos de horário.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f6f8",
+  "theme_color": "#1d3b53",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

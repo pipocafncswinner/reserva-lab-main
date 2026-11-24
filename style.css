@@ -1,0 +1,227 @@
+:root {
+  --bg: #f4f6f8;
+  --card: #ffffff;
+  --ink: #1b2430;
+  --mut: #5b6775;
+  --pri: #1d3b53;
+  --acc: #e0a526;
+  --bd: #d5dbe1;
+  --err: #b3261e;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121820;
+    --card: #1b2430;
+    --ink: #e8edf2;
+    --mut: #9aa7b4;
+    --pri: #5fa0cf;
+    --bd: #2d3a48;
+    --err: #ff8a80;
+  }
+
+  button.pri {
+    color: #0b1218;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding-bottom: 90px;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  padding: 14px 16px 0;
+  background: #1d3b53;
+  color: #ffffff;
+}
+
+h1 {
+  margin: 0 0 10px;
+  font-size: 1.25rem;
+}
+
+nav {
+  display: flex;
+  gap: 4px;
+}
+
+nav button {
+  padding: 10px 16px;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  border-radius: 0;
+  background: none;
+  color: #c9d6e0;
+  font: inherit;
+  cursor: pointer;
+}
+
+nav button.on {
+  color: #ffffff;
+  border-color: var(--acc);
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 14px;
+}
+
+.bar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.bar input,
+.bar select {
+  flex: 1;
+  min-width: 0;
+}
+
+input,
+select,
+button {
+  font: inherit;
+}
+
+input,
+select {
+  padding: 10px;
+  border: 1px solid var(--bd);
+  border-radius: 6px;
+  background: var(--card);
+  color: var(--ink);
+}
+
+button {
+  padding: 10px 14px;
+  border: 1px solid var(--bd);
+  border-radius: 6px;
+  background: var(--card);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+button.pri {
+  background: var(--pri);
+  border-color: var(--pri);
+  color: #ffffff;
+}
+
+button.del {
+  color: var(--err);
+  border-color: var(--err);
+}
+
+:focus-visible {
+  outline: 3px solid var(--acc);
+  outline-offset: 2px;
+}
+
+h3 {
+  margin: 18px 0 6px;
+  font-size: 1rem;
+  color: var(--mut);
+}
+
+.card {
+  display: block;
+  width: 100%;
+  margin-bottom: 8px;
+  border-left: 5px solid var(--acc);
+  text-align: left;
+}
+
+.card b {
+  font-size: 1.05rem;
+}
+
+.card small {
+  display: block;
+  color: var(--mut);
+}
+
+.vazio {
+  padding: 12px 0;
+  color: var(--mut);
+}
+
+#fab {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  padding: 14px 20px;
+  border-radius: 999px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+#novoEsp {
+  margin-bottom: 12px;
+}
+
+dialog {
+  width: min(92vw, 440px);
+  padding: 18px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--card);
+  color: var(--ink);
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+dialog h2 {
+  margin: 0 0 10px;
+  font-size: 1.15rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: var(--mut);
+}
+
+label input,
+label select {
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+  color: var(--ink);
+}
+
+.duo {
+  display: flex;
+  gap: 10px;
+}
+
+.duo label {
+  flex: 1;
+}
+
+.erro {
+  min-height: 1.2em;
+  margin: 0 0 8px;
+  color: var(--err);
+}
+
+.acts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
